@@ -16,6 +16,6 @@ be extra pointless once the tour wraps up).  Regardless, here's hoping
 that we *do* end up getting some more surprises, otherwise this is
 an awful lot of overkill.  :)
 
-The script is written in Python, and only tested on Python 3, though
-I'm not aware of anything in there which would prevent it from working
-in Python 2, as well.
+The script is written in Python, and only tested on Python 3.  (The
+`gen_post.py` script definitely requires at least Python 3.7, though
+`scores.py` may work fine in Python 2.)

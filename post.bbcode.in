@@ -1,0 +1,234 @@
+So we're a bit over halfway through Cold and Black and Infinite, and we've got this little reprieve before the gang gets back on the road.  I don't think [i]anyone[/i] could've predicted the kinds of insane setlists we've been getting this time around, and at this point it sort of feels like practically anything's possible.
+
+So, how about we place some bets about what new songs might get debuted in the remainder of the tour?  Not, like, with money or anything, but here's the general gist of what I was thinking:
+
+[size=+1][b]Method[/b][/size]
+
+Each person puts their votes in a single post.  Put down the [i]full[/i] list of stuff that you think'll debut in the remainder of the tour, and then we'll wait and see.  Full points for predictions would stop at the start time of the first Mexico City date -- any posts edited/added past that time will get fewer points.  Then once the tour's over, it gets scored something like this:
+
+[indent]
+
+[i](Now that the tour has started, I'll still accept predictions, but you'll get a reduction in points based on how many shows've been missed)[/i]
+[b]Vocals:[/b]
+[indent]
+Correct prediction: [s][b]+100 pts[/b][/s] [i](-10pt penalty for each show missed, so if you post now it's [b]90pts[/b])[/i]
+Bonus points for a never-been-played song: [b]+50 pts[/b]
+Wrong prediction: [b]-50 pts[/b]
+Debut which you didn't guess: [b]-25 pts[/b]
+[/indent]
+
+[b]Instrumentals / Covers:[/b]
+[indent]
+Correct prediction: [s][b]+150 pts[/b][/s] [i](-15pt penalty for each show missed, so if you post now it's [b]135pts[/b])[/i]
+Wrong prediction: [b]-75 pts[/b]
+Debut which you didn't guess: [b]-10pts[/b]
+[/indent]
+
+Bonus points if you correctly guess all debuts: [b]+100 pts[/b]
+
+If no new debuts, and you post with "no debuts": [s][b]+100 pts[/b][/s] [i](though that would certainly be a shame; -10pt penalty for each show missed, so if you post now it's [b]90pts[/b])[/i]
+[/indent]
+
+[i]Example:[/i] Let's say I predict Down In It, Heresy, and God Given.  By the end of the tour, I've gotten pretty lucky and they've performed DII and Heresy, but also No, You Don't and Into the Void.  So I get +200 for my correct predictions, -50 for the one I got totally wrong, and then -50 for the two that I missed.  So my score ends up at 100.
+
+Predictions for full-album playthroughs should probably be weighted a bit more heavily, yeah?  I'm proposing the following:
+
+[indent]
+[i](points for successful prediction / subtraction for incorrect prediction)[/i]
+[b]Pretty Hate Machine:[/b] +1000 / -500
+[b]The Downward Spiral:[/b] +500 / -250
+[b]The Fragile (left):[/b] +1500 / -750
+[b]The Fragile (right):[/b] +2000 / -1000
+[b]With Teeth:[/b] + 1200 / -600
+[b]Year Zero:[/b] +1500 / -750
+[b]The Slip:[/b] +1000 / -500
+[b]Hesitation Marks:[/b] +1500 / -750
+[b]NTAE:[/b] +300 / -150
+[b]ADD VIOLENCE:[/b] +300 / -150
+[b]Bad Witch:[/b] +300 / -150
+[/indent]
+
+I haven't really thought the exact point values through too much -- this was mostly a driving-home-from-groceries-with-not-much-else-to-think-about thing -- so I'm open to suggestions.  Ties get broken by earliest post timestamp, I suppose.  My thought was to penalize folks from casting too wide a prediction net, with the negative points, but also encourage a bit of boldness.  Instrumentals/Covers should, IMO, carry a bigger reward/penalty since those are in general far less likely.  I omitted a never-been-played category in there 'cause I think at this point basically all of them would be in there, yeah?
+
+Winner gets the warm glow of contentment and pleasure that comes from having beaten the odds!
+
+Fun, possibly?  I think so.
+
+[size=+1][b]Current Scores[/b][/size]
+
+The tour is not yet over, so these will (hopefully) change at least once or twice as the band pulls out some new shit for us.  If you know Python, feel free to check my scoring logic at [url]https://github.com/apocalyptech/ets-cbi-predictions/blob/master/scores.py[/url]
+
+[indent]
+[i](Last updated after the Nov 18 show.)[/i]
+
+{{scores}}
+[/indent]
+
+Dryalex12 and theimage13 (and technically elevenism) are benefitting from my allowing their cheeky "a song will be played" predictions, though so long as we get at least one more debut, they'll hop back in the negative range along with everyone else.  Esperanzan is also benefitting from the "Not WITT" guess.  paul_guyet is being a little unfairly scored at the moment, since I realize that the predictions I put down in there include both "All of TDS", plus a few TDS tracks.  I'll have to figure out what to do about that in a bit, but that score should be a bit higher than it is.
+
+A bit silly to have a scoring system where probably practically [i]everyone[/i] is gonna be in negative points forever, isn't it?  Ah well.
+
+[size=+1][b]Tour Updates[/b][/size]
+
+[indent]
+[b]Nov 18 - Mexico City, MX, Corona Capital:[/b] -
+[b]Nov 19 - Mexico City, MX, Plaza Condesa:[/b] [i](n/a)[/i]
+[b]Nov 23 - New Orleans, LA:[/b] [i](n/a)[/i]
+[b]Nov 24 - New Orleans, LA:[/b] [i](n/a)[/i]
+[b]Nov 25 - New Orleans, LA:[/b] [i](n/a)[/i]
+[b]Nov 27 - Irving, TX:[/b] [i](n/a)[/i]
+[b]Nov 28 - Irving, TX:[/b] [i](n/a)[/i]
+[b]Nov 30 - Las Vegas, NV:[/b] [i](n/a)[/i]
+[b]Dec 1 - Las Vegas, NV:[/b] [i](n/a)[/i]
+[b]Dec 3 - San Francisco, CA:[/b] [i](n/a)[/i]
+[b]Dec 4 - San Francisco, CA:[/b] [i](n/a)[/i]
+[b]Dec 7 - Los Angeles, CA:[/b] [i](n/a)[/i]
+[b]Dec 8 - Los Angeles, CA:[/b] [i](n/a)[/i]
+[b]Dec 11 - Los Angeles, CA:[/b] [i](n/a)[/i]
+[b]Dec 12 - Los Angeles, CA:[/b] [i](n/a)[/i]
+[b]Dec 14 - Los Angeles, CA:[/b] [i](n/a)[/i]
+[b]Dec 15 - Los Angeles, CA:[/b] [i](n/a)[/i]
+[/indent]
+
+[size=+1][b]Played So Far[/b][/size]
+
+Haysey suggested that I include the list of already-played songs in here, quite awhile ago, and I'd completely neglected to do so until the "main" window was already closed, but here it is anyway (cribbed from elevenism's thread) -
+
+[b]Pretty Hate Machine:[/b]
+
+[indent]
+Head Like a Hole
+Terrible Lie
+Sanctified
+Something I Can Never Have
+Sin
+
+Now I'm Nothing
+[/indent]
+
+[b]Broken:[/b]
+
+[indent]
+Pinion
+Wish
+Last
+Help Me I Am in Hell
+Happiness in Slavery
+Gave Up
+Physical (You're So)
+Suck
+[/indent]
+
+[b]The Downward Spiral:[/b]
+
+[indent]
+Mr. Self Destruct
+Piggy
+March of the Pigs
+Closer
+The Becoming
+I Do Not Want This
+A Warm Place
+Eraser
+Reptile
+Hurt
+
+Burn
+The Perfect Drug
+[/indent]
+
+[b]The Fragile:[/b]
+
+[indent]
+Somewhat Damaged
+The Day the World Went Away
+The Frail
+The Wretched
+Even Deeper
+La Mer
+Starfuckers, Inc.
+The Big Come Down
+
+And All That Could Have Been
+[/indent]
+
+[b]With Teeth:[/b]
+
+[indent]
+All the Love in the World
+The Hand That Feeds
+Only
+
+Home
+[/indent]
+
+[b]Year Zero:[/b]
+
+[indent]
+The Beginning of the End
+Survivalism
+The Good Soldier
+Me, I'm Not
+The Great Destroyer
+[/indent]
+
+[b]The Slip:[/b]
+
+[indent]
+1,000,000
+Letting You
+[/indent]
+
+[b]Hesitation Marks:[/b]
+
+[indent]
+Pinion / Eater of Dreams
+Copy of A
+Came Back Haunted
+Find My Way
+[/indent]
+
+[b]Not the Actual Events:[/b]
+
+[indent]
+Branches/Bones
+Dear World,
+Burning Bright (Field on Fire)
+[/indent]
+
+[b]Add Violence:[/b]
+
+[indent]
+Less Than
+The Lovers
+This Isn't the Place
+The Background World
+[/indent]
+
+[b]Bad Witch:[/b]
+
+[indent]
+Shit Mirror
+Ahead of Ourselves
+God Break Down the Door
+Over and Out
+[/indent]
+
+[b]Covers:[/b]
+
+[indent]
+[i]David Bowie:[/i]
+I'm Afraid of Americans
+I Can't Give Everything Away
+Subterraneans
+
+[i]Joy Division:[/i]
+Digital
+Dead Souls
+
+[i]Gary Numan:[/i]
+Metal
+
+[i]How to Destroy Angels:[/i]
+Parasite
+[/indent]
