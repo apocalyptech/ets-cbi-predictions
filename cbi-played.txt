@@ -40,16 +40,20 @@ The Downward Spiral:
 
 The Fragile:
 
-    Somewhat Damaged
-    The Day the World Went Away
-    The Frail
-    The Wretched
-    Even Deeper
-    La Mer
-    Starfuckers, Inc.
-    The Big Come Down
+    left:
+        Somewhat Damaged
+        The Day the World Went Away
+        The Frail
+        The Wretched
+        Even Deeper
+        La Mer
 
-    And All That Could Have Been
+    right:
+        Starfuckers, Inc.
+        The Big Come Down
+
+    other:
+        And All That Could Have Been
 
 With Teeth:
 

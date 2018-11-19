@@ -24,11 +24,15 @@ class SongTypes(object):
 
 class Song(object):
 
-    def __init__(self, name, songtype, real=True, album=False):
+    def __init__(self, name, songtype, real=True, album_songs=[]):
         self.name = name
         self.songtype = songtype
         self.real = real
-        self.album = album
+        self.album = (len(album_songs) > 0)
+        self.album_songs = set(album_songs)
+        self.in_album = None
+        for album_song in self.album_songs:
+            album_song.in_album = self
 
     def __lt__(self, other):
         """
@@ -43,25 +47,46 @@ class Songs(object):
 
     # PHM Songs
     dii = Song('Down In It', SongTypes.vocal)
+    want_to = Song('Kinda I Want To', SongTypes.vocal)
+    what_i_get = Song("That's What I Get", SongTypes.vocal)
+    only_time = Song('The Only Time', SongTypes.vocal)
+    ringfinger = Song('Ringfinger', SongTypes.vocal)
+
+    # This is technically a cover, but given the frequency with which
+    # NIN used to perform it, I'm going to count it as an "ordinary"
+    # vocal track, rather than a cover.
+    get_down_make_love = Song('Get Down, Make Love', SongTypes.vocal)
 
     # TDS Songs
     heresy = Song('Heresy', SongTypes.vocal)
     ruiner = Song('Ruiner', SongTypes.vocal)
+    bmwag = Song('Big Man With a Gun', SongTypes.vocal)
     tds = Song('The Downward Spiral', SongTypes.vocal)
 
-    # Fragile Songs
-    itv = Song('Into the Void', SongTypes.vocal)
-    fragile = Song('The Fragile', SongTypes.vocal)
+    # Fragile (left) Songs
     witt = Song("We're In This Together", SongTypes.vocal)
     not_witt = Song("NOT We're In This Together", SongTypes.not_witt, real=False)
+    fragile = Song('The Fragile', SongTypes.vocal)
+    jlyi = Song('Just Like You Imagined', SongTypes.instcover)
+    pilgrimage = Song('Pilgrimage', SongTypes.instcover)
+    no_you_dont = Song("No, You Don't", SongTypes.vocal)
+    great_below = Song('The Great Below', SongTypes.vocal)
+
+    # Fragile (right) Songs
+    way_out_is_through = Song('The Way Out is Through', SongTypes.vocal)
+    itv = Song('Into the Void', SongTypes.vocal)
     where_is_everybody = Song('Where Is Everybody?', SongTypes.vocal_never)
+    mark_made = Song('The Mark Has Been Made', SongTypes.instcover)
+    please = Song('Please', SongTypes.vocal)
+    complication = Song('Complication', SongTypes.instcover)
+    joining_you = Song("I'm Looking Forward to Joining You, Finally", SongTypes.vocal_never)
+    underneath = Song('Underneath It All', SongTypes.vocal_never)
+    ripe = Song('Ripe (with or without Decay)', SongTypes.instcover)
+
+    # Fragile (other) Songs
     leaving_hope = Song('Leaving Hope', SongTypes.instcover)
     adrift_and_at_peace = Song('Adrift And At Peace', SongTypes.instcover)
     deep = Song('Deep', SongTypes.vocal)
-    great_below = Song('The Great Below', SongTypes.vocal)
-    no_you_dont = Song("No, You Don't", SongTypes.vocal)
-    please = Song('Please', SongTypes.vocal)
-    underneath = Song('Underneath It All', SongTypes.vocal_never)
 
     # With Teeth Songs
     sunspots = Song('Sunspots', SongTypes.vocal_never)
@@ -91,14 +116,40 @@ class Songs(object):
     # Covers
     scary_monsters = Song('Scary Monsters', SongTypes.instcover)
     zoo_station = Song('Zoo Station', SongTypes.instcover)
-    # Arguably this one shouldn't be considered a cover, really, given history
-    get_down_make_love = Song('Get Down, Make Love', SongTypes.instcover)
 
     # Full Albums
-    al_phm = Song('Full PHM Album', SongTypes.al_phm, album=True)
-    al_tds = Song('Full TDS Album', SongTypes.al_tds, album=True)
-    al_fragile_left = Song('Full Fragile (left) Album', SongTypes.al_fragile_left, album=True)
-    al_fragile_right = Song('Full Fragile (right) Album', SongTypes.al_fragile_right, album=True)
+    al_phm = Song('Full PHM Album', SongTypes.al_phm, album_songs=[
+        dii,
+        want_to,
+        what_i_get,
+        only_time,
+        ringfinger,
+        ])
+    al_tds = Song('Full TDS Album', SongTypes.al_tds, album_songs=[
+        heresy,
+        ruiner,
+        bmwag,
+        tds,
+        ])
+    al_fragile_left = Song('Full Fragile (left) Album', SongTypes.al_fragile_left, album_songs=[
+        witt,
+        fragile,
+        jlyi,
+        pilgrimage,
+        no_you_dont,
+        great_below,
+        ])
+    al_fragile_right = Song('Full Fragile (right) Album', SongTypes.al_fragile_right, album_songs=[
+        way_out_is_through,
+        itv,
+        where_is_everybody,
+        mark_made,
+        please,
+        complication,
+        joining_you,
+        underneath,
+        ripe,
+        ])
 
 class Voter(object):
 
@@ -112,33 +163,46 @@ class Voter(object):
 
     def score(self, played=None):
         if self._score is None:
+
+            # First add any bonus points
             if self.bonus_points > 0:
                 self.details.append('{:+d} bonus points for being cheeky'.format(self.bonus_points))
             points = self.bonus_points
+
+            # Now go through the votes to see if they matched or not
             for vote in sorted(self.votes):
-                if vote in played:
+                if vote in played or (vote.in_album and vote.in_album in played):
                     point_change = max(0, (vote.songtype.win + (self.offset * vote.songtype.modifier)))
                     self.details.append('{:+d} for guessing "{}" correctly'.format(point_change, vote.name))
                     points += point_change
                 else:
                     self.details.append('{:+d} for incorrectly guessing "{}"'.format(vote.songtype.lose, vote.name))
                     points += vote.songtype.lose
+
+            # Now loop through the played songs to see what was potentially
+            # missed.
             correctly_guessed = 0
             total_real = 0
             for song in sorted(played):
-                # TODO: er, this whole bit could be simplified
                 if song.real:
                     total_real += 1
                     if song in self.votes:
                         correctly_guessed += 1
-                if song not in self.votes:
-                    if song.real:
+                    elif song.songtype.noguess != 0:
                         self.details.append('{:+d} for not guessing "{}"'.format(song.songtype.noguess, song.name))
-                    points += song.songtype.noguess
+                        points += song.songtype.noguess
+
+            # See if the voter correctly guessed all of the debuted songs.
+            # If it weren't for `not_witt`, we could use boolean
+            # operators on the relevant `set` objects here, rather than the
+            # hacky counts.
             if total_real > 0 and correctly_guessed == total_real:
                 self.details.append('+100 for guessing all debuted songs')
                 points += 100
+
+            # Now set our internal score var
             self._score = points
+
         return self._score
 
 # Voters
