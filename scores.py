@@ -1,0 +1,286 @@
+#!/usr/bin/env python
+# vim: set expandtab tabstop=4 shiftwidth=4:
+
+class SongType(object):
+
+    def __init__(self, desc, win, modifier, lose, noguess):
+        self.desc = desc
+        self.win = win
+        self.modifier = modifier
+        self.lose = lose
+        self.noguess = noguess
+
+class SongTypes(object):
+    vocal_never = SongType('Never Been Played Vocal', 150, -10, -50, -25)
+    vocal = SongType('Vocal', 100, -10, -50, -25)
+    instcover = SongType('Instrumental/Cover', 150, -15, -75, -10)
+
+    not_witt = SongType('NOT WITT', 50, 0, -100, 0)
+
+    al_phm = SongType('Full PHM Album', 1000, 0, -500, 0)
+    al_tds = SongType('Full TDS Album', 500, 0, -250, 0)
+    al_fragile_left = SongType('Full Fragile (left) Album', 1500, 0, -750, 0)
+    al_fragile_right = SongType('Full Fragile (right) Album', 2000, 0, -1000, 0)
+
+class Song(object):
+
+    def __init__(self, name, songtype, real=True, album=False):
+        self.name = name
+        self.songtype = songtype
+        self.real = real
+        self.album = album
+
+    def __lt__(self, other):
+        """
+        Sorting!
+        """
+        if self.album == other.album:
+            return self.name < other.name
+        else:
+            return other.album
+
+class Songs(object):
+
+    # PHM Songs
+    dii = Song('Down In It', SongTypes.vocal)
+
+    # TDS Songs
+    heresy = Song('Heresy', SongTypes.vocal)
+    ruiner = Song('Ruiner', SongTypes.vocal)
+    tds = Song('The Downward Spiral', SongTypes.vocal)
+
+    # Fragile Songs
+    itv = Song('Into the Void', SongTypes.vocal)
+    fragile = Song('The Fragile', SongTypes.vocal)
+    witt = Song("We're In This Together", SongTypes.vocal)
+    not_witt = Song("NOT We're In This Together", SongTypes.not_witt, real=False)
+    where_is_everybody = Song('Where Is Everybody?', SongTypes.vocal_never)
+    leaving_hope = Song('Leaving Hope', SongTypes.instcover)
+    adrift_and_at_peace = Song('Adrift And At Peace', SongTypes.instcover)
+    deep = Song('Deep', SongTypes.vocal)
+    great_below = Song('The Great Below', SongTypes.vocal)
+    no_you_dont = Song("No, You Don't", SongTypes.vocal)
+    please = Song('Please', SongTypes.vocal)
+    underneath = Song('Underneath It All', SongTypes.vocal_never)
+
+    # With Teeth Songs
+    sunspots = Song('Sunspots', SongTypes.vocal_never)
+    rwib = Song('Right Where It Belongs', SongTypes.vocal)
+
+    # Year Zero Songs
+    capital_g = Song('Capital G', SongTypes.vocal)
+    violent_heart = Song('My Violent Heart', SongTypes.vocal_never)
+    warning = Song('The Warning', SongTypes.vocal)
+    god_given = Song('God Given', SongTypes.vocal)
+
+    # Slip Songs
+    four_of_us = Song('The Four of Us Are Dying', SongTypes.instcover)
+
+    # Hesitation Marks Songs
+    disappointed = Song('Disappointed', SongTypes.vocal)
+    everything = Song('Everything', SongTypes.vocal_never)
+
+    # Trilogy Songs
+    not_anymore = Song('Not Anymore', SongTypes.vocal_never)
+    idea_of_you = Song('The Idea of You', SongTypes.vocal_never)
+
+    # Others
+    tetsuo = Song('Theme For Tetsuo: The Bullet Man', SongTypes.instcover)
+    quake = Song('Quake Main Theme (track 1)', SongTypes.instcover)
+
+    # Covers
+    scary_monsters = Song('Scary Monsters', SongTypes.instcover)
+    zoo_station = Song('Zoo Station', SongTypes.instcover)
+    # Arguably this one shouldn't be considered a cover, really, given history
+    get_down_make_love = Song('Get Down, Make Love', SongTypes.instcover)
+
+    # Full Albums
+    al_phm = Song('Full PHM Album', SongTypes.al_phm, album=True)
+    al_tds = Song('Full TDS Album', SongTypes.al_tds, album=True)
+    al_fragile_left = Song('Full Fragile (left) Album', SongTypes.al_fragile_left, album=True)
+    al_fragile_right = Song('Full Fragile (right) Album', SongTypes.al_fragile_right, album=True)
+
+class Voter(object):
+
+    def __init__(self, name, votes, offset=0, bonus_points=0):
+        self.name = name
+        self.votes = set(votes)
+        self.offset = offset
+        self.bonus_points = bonus_points
+        self._score = None
+        self.details = []
+
+    def score(self, played=None):
+        if self._score is None:
+            if self.bonus_points > 0:
+                self.details.append('{:+d} bonus points for being cheeky'.format(self.bonus_points))
+            points = self.bonus_points
+            for vote in sorted(self.votes):
+                if vote in played:
+                    point_change = max(0, (vote.songtype.win + (self.offset * vote.songtype.modifier)))
+                    self.details.append('{:+d} for guessing "{}" correctly'.format(point_change, vote.name))
+                    points += point_change
+                else:
+                    self.details.append('{:+d} for incorrectly guessing "{}"'.format(vote.songtype.lose, vote.name))
+                    points += vote.songtype.lose
+            correctly_guessed = 0
+            total_real = 0
+            for song in sorted(played):
+                # TODO: er, this whole bit could be simplified
+                if song.real:
+                    total_real += 1
+                    if song in self.votes:
+                        correctly_guessed += 1
+                if song not in self.votes:
+                    if song.real:
+                        self.details.append('{:+d} for not guessing "{}"'.format(song.songtype.noguess, song.name))
+                    points += song.songtype.noguess
+            if total_real > 0 and correctly_guessed == total_real:
+                self.details.append('+100 for guessing all debuted songs')
+                points += 100
+            self._score = points
+        return self._score
+
+# Voters
+voters = [
+        Voter('elevenism', [
+            Songs.scary_monsters,
+            Songs.witt,
+            Songs.not_anymore,
+            Songs.al_phm,
+            ], bonus_points=2),
+
+        Voter('klyrish', [
+            Songs.witt,
+            Songs.itv,
+            Songs.heresy,
+            Songs.ruiner,
+            ]),
+
+        Voter('paul_guyet', [
+            Songs.al_tds,
+            Songs.heresy,
+            Songs.ruiner,
+            Songs.tds,
+            Songs.fragile,
+            Songs.where_is_everybody,
+            ]),
+
+        Voter('henryeatscereal', [
+            Songs.leaving_hope,
+            Songs.adrift_and_at_peace,
+            ]),
+
+        Voter('loopcloses', [
+            Songs.tds,
+            ]),
+
+        Voter('R-Dot-Yung', [
+            Songs.deep,
+            ]),
+
+        Voter('K-Rice', [
+            Songs.al_fragile_left,
+            Songs.al_fragile_right,
+            ]),
+
+        Voter('Haysey', [
+            Songs.itv,
+            Songs.idea_of_you,
+            Songs.leaving_hope,
+            Songs.tetsuo,
+            Songs.capital_g,
+            ]),
+
+        Voter('joplinpicasso', [
+            Songs.sunspots,
+            Songs.witt,
+            ]),
+
+        Voter('fillow', [
+            Songs.al_fragile_left,
+            ]),
+
+        Voter('AThousandDaysBefore', [
+            Songs.violent_heart,
+            Songs.where_is_everybody,
+            Songs.al_fragile_left,
+            Songs.zoo_station,
+            ]),
+
+        Voter('Esperanzan', [
+            Songs.great_below,
+            Songs.dii,
+            Songs.fragile,
+            Songs.heresy,
+            Songs.four_of_us,
+            Songs.not_anymore,
+            Songs.not_witt,
+            ]),
+
+        Voter('xolotl', [
+            Songs.heresy,
+            Songs.itv,
+            Songs.warning,
+            Songs.disappointed,
+            ]),
+
+        Voter('trollmanen', [
+            Songs.witt,
+            Songs.no_you_dont,
+            Songs.please,
+            Songs.deep,
+            Songs.quake,
+            ]),
+
+        Voter('Elrickooo', [
+            Songs.underneath,
+            Songs.please,
+            Songs.ruiner,
+            Songs.get_down_make_love,
+            Songs.rwib,
+            Songs.god_given,
+            ]),
+
+        Voter('Dryalex12', [
+            ], bonus_points=2),
+
+        Voter('theimage13', [
+            ], bonus_points=2),
+
+        # Missed 1 show
+
+        Voter('Halo Infinity', [
+            Songs.everything,
+            ], offset=1),
+
+        Voter('Deepvoid', [
+            Songs.idea_of_you,
+            Songs.leaving_hope,
+            Songs.witt,
+            ], offset=1),
+    ]
+
+# What new songs have been played so far
+played = set([
+        Songs.not_witt,
+        ])
+
+# Calculate scores and report.  Due to some internal Python behavior,
+# this is breaking ties by the order in which the voters appear in
+# the list, which is what we want.  So I'm not actually specifying
+# that manually.
+for voter in sorted(voters, key=lambda v: v.score(played), reverse=True):
+    if voter.offset > 0:
+        if voter.offset == 1:
+            plural = ''
+        else:
+            plural = 's'
+        print('{}: [b]{}[/b] [i](missed {} show{})[/i]'.format(voter.name, voter.score(), voter.offset, plural))
+    else:
+        print('{}: [b]{}[/b]'.format(voter.name, voter.score()))
+    if len(voter.details) > 0:
+        print('[list]')
+        for detail in voter.details:
+            print('[*] {}'.format(detail))
+        print('[/list]')
