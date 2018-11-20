@@ -11,7 +11,7 @@ Each person puts their votes in a single post.  Put down the [i]full[/i] list of
 [i](Now that the tour has started, I'll still accept predictions, but you'll get a reduction in points based on how many shows've been missed)[/i]
 [b]Vocals:[/b]
 [indent]
-Correct prediction: [s][b]+100 pts[/b][/s] [i](-10pt penalty for each show missed, so if you post now it's [b]90pts[/b])[/i]
+Correct prediction: [s][b]+100 pts[/b][/s] [i](-10pt penalty for each show missed, so if you post now it's [b]80pts[/b])[/i]
 Bonus points for a never-been-played song: [b]+50 pts[/b]
 Wrong prediction: [b]-50 pts[/b]
 Debut which you didn't guess: [b]-25 pts[/b]
@@ -19,14 +19,14 @@ Debut which you didn't guess: [b]-25 pts[/b]
 
 [b]Instrumentals / Covers:[/b]
 [indent]
-Correct prediction: [s][b]+150 pts[/b][/s] [i](-15pt penalty for each show missed, so if you post now it's [b]135pts[/b])[/i]
+Correct prediction: [s][b]+150 pts[/b][/s] [i](-15pt penalty for each show missed, so if you post now it's [b]110pts[/b])[/i]
 Wrong prediction: [b]-75 pts[/b]
 Debut which you didn't guess: [b]-10pts[/b]
 [/indent]
 
 Bonus points if you correctly guess all debuts: [b]+100 pts[/b]
 
-If no new debuts, and you post with "no debuts": [s][b]+100 pts[/b][/s] [i](though that would certainly be a shame; -10pt penalty for each show missed, so if you post now it's [b]90pts[/b])[/i]
+If no new debuts, and you post with "no debuts": [s][b]+100 pts[/b][/s] [i](though that would certainly be a shame; -10pt penalty for each show missed, so if you post now it's [b]80pts[/b])[/i]
 [/indent]
 
 [i]Example:[/i] Let's say I predict Down In It, Heresy, and God Given.  By the end of the tour, I've gotten pretty lucky and they've performed DII and Heresy, but also No, You Don't and Into the Void.  So I get +200 for my correct predictions, -50 for the one I got totally wrong, and then -50 for the two that I missed.  So my score ends up at 100.
@@ -59,7 +59,7 @@ Fun, possibly?  I think so.
 The tour is not yet over, so these will (hopefully) change at least once or twice as the band pulls out some new shit for us.  If you know Python, feel free to check my scoring logic at [url]https://github.com/apocalyptech/ets-cbi-predictions/blob/master/scores.py[/url]
 
 [indent]
-[i](Last updated after the Nov 18 show.)[/i]
+[i](Last updated after the Nov 19 show.)[/i]
 
 {{scores}}
 [/indent]
@@ -72,7 +72,7 @@ A bit silly to have a scoring system where probably practically [i]everyone[/i] 
 
 [indent]
 [b]Nov 18 - Mexico City, MX, Corona Capital:[/b] -
-[b]Nov 19 - Mexico City, MX, Plaza Condesa:[/b] [i](n/a)[/i]
+[b]Nov 19 - Mexico City, MX, Plaza Condesa:[/b] -
 [b]Nov 23 - New Orleans, LA:[/b] [i](n/a)[/i]
 [b]Nov 24 - New Orleans, LA:[/b] [i](n/a)[/i]
 [b]Nov 25 - New Orleans, LA:[/b] [i](n/a)[/i]
