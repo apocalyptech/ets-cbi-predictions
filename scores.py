@@ -97,6 +97,7 @@ class Songs(object):
     violent_heart = Song('My Violent Heart', SongTypes.vocal_never)
     warning = Song('The Warning', SongTypes.vocal)
     god_given = Song('God Given', SongTypes.vocal)
+    zero_sum = Song('Zero-Sum', SongTypes.vocal)
 
     # Slip Songs
     four_of_us = Song('The Four of Us Are Dying', SongTypes.instcover)
@@ -323,6 +324,13 @@ voters = [
             Songs.leaving_hope,
             Songs.witt,
             ], offset=1),
+
+        # Missed 2 shows
+
+        Voter('WorzelG', [
+            Songs.violent_heart,
+            Songs.zero_sum,
+            ], offset=2),
     ]
 
 # What new songs have been played so far
