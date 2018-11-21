@@ -97,7 +97,7 @@ class Songs(object):
     violent_heart = Song('My Violent Heart', SongTypes.vocal_never)
     warning = Song('The Warning', SongTypes.vocal)
     god_given = Song('God Given', SongTypes.vocal)
-    zero_sum = Song('Zero-Sum', SongTypes.vocal)
+    zero_sum = Song('Zero-Sum', SongTypes.vocal_never)
 
     # Slip Songs
     four_of_us = Song('The Four of Us Are Dying', SongTypes.instcover)
