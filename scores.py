@@ -331,6 +331,12 @@ voters = [
             Songs.violent_heart,
             Songs.zero_sum,
             ], offset=2),
+
+        # Missed 7 shows
+
+        Voter('cdm', [
+            Songs.heresy,
+            ], offset=7),
     ]
 
 # What new songs have been played so far
