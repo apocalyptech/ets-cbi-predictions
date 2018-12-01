@@ -11,9 +11,9 @@ class SongType(object):
         self.noguess = noguess
 
 class SongTypes(object):
-    vocal_never = SongType('Never Been Played Vocal', 150, -10, -50, -25)
-    vocal = SongType('Vocal', 100, -10, -50, -25)
-    instcover = SongType('Instrumental/Cover', 150, -15, -75, -10)
+    vocal_never = SongType('Never Been Played Vocal', 150, 0, -50, -25)
+    vocal = SongType('Vocal', 100, 0, -50, -25)
+    instcover = SongType('Instrumental/Cover', 150, 0, -75, -10)
 
     not_witt = SongType('NOT WITT', 50, 0, -100, 0)
 
@@ -349,7 +349,9 @@ played = set([
 # the list, which is what we want.  So I'm not actually specifying
 # that manually.
 for voter in sorted(voters, key=lambda v: v.score(played), reverse=True):
-    if voter.offset > 0:
+    # Thus far nobody's actually taken the "no debuts" vote, and since
+    # I'm not subtracting points otherwise, don't bother reporting on this.
+    if False and voter.offset > 0:
         if voter.offset == 1:
             plural = ''
         else:

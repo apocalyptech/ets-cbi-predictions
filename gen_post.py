@@ -9,9 +9,8 @@ if len(sys.argv) != 2:
     sys.exit(1)
 missed = int(sys.argv[1])
 
-# Calculate current points
-cur_points_regular = max(0, 100-(10*missed))
-cur_points_fancy = max(0, 150-(15*missed))
+# Calculate no-debut vote points
+points_no_debut = max(0, 100-(10*missed))
 
 # Get score output
 score_text = subprocess.run(
@@ -26,5 +25,5 @@ with open('post.bbcode.in', 'r') as df:
             if line.strip() == '{{scores}}':
                 out.write(score_text)
             else:
-                out.write(line.replace('{{points_regular}}', str(cur_points_regular)).replace('{{points_fancy}}', str(cur_points_fancy)))
+                out.write(line.replace('{{points_no_debut}}', str(points_no_debut)))
 print('Wrote to post.bbcode')
