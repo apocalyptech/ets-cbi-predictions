@@ -117,6 +117,8 @@ class Songs(object):
     # Covers
     scary_monsters = Song('Scary Monsters', SongTypes.instcover)
     zoo_station = Song('Zoo Station', SongTypes.instcover)
+    drowning = Song('A Drowning', SongTypes.instcover)
+    welcomeoblivion = Song('Welcome Oblivion', SongTypes.instcover)
 
     # Full Albums
     al_phm = Song('Full PHM Album', SongTypes.al_phm, album_songs=[
@@ -342,6 +344,8 @@ voters = [
 # What new songs have been played so far
 played = set([
         Songs.not_witt,
+        Songs.drowning,
+        Songs.welcomeoblivion,
         ])
 
 # Calculate scores and report.  Due to some internal Python behavior,
