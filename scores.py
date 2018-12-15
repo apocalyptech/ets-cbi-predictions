@@ -89,6 +89,7 @@ class Songs(object):
     deep = Song('Deep', SongTypes.vocal)
 
     # With Teeth Songs
+    ediets = Song('Every Day Is Exactly The Same', SongTypes.vocal)
     sunspots = Song('Sunspots', SongTypes.vocal_never)
     rwib = Song('Right Where It Belongs', SongTypes.vocal)
 
@@ -322,6 +323,7 @@ voters = [
 
         Voter('Halo Infinity', [
             Songs.everything,
+            Songs.ediets,
             ], offset=1),
 
         Voter('Deepvoid', [
@@ -342,6 +344,13 @@ voters = [
         Voter('cdm', [
             Songs.heresy,
             ], offset=7),
+
+        # Missed a bunch of shoews
+
+        Voter('Erneuert', [
+            Songs.al_tds,
+            Songs.heresy,
+            ], offset=15),
     ]
 
 # What new songs have been played so far
