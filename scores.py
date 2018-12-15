@@ -98,6 +98,7 @@ class Songs(object):
     warning = Song('The Warning', SongTypes.vocal)
     god_given = Song('God Given', SongTypes.vocal)
     zero_sum = Song('Zero-Sum', SongTypes.vocal_never)
+    twilight = Song('In This Twilight', SongTypes.vocal)
 
     # Slip Songs
     four_of_us = Song('The Four of Us Are Dying', SongTypes.instcover)
@@ -119,6 +120,8 @@ class Songs(object):
     zoo_station = Song('Zoo Station', SongTypes.instcover)
     drowning = Song('A Drowning', SongTypes.instcover)
     welcomeoblivion = Song('Welcome Oblivion', SongTypes.instcover)
+    wing = Song('On the Wing', SongTypes.instcover)
+    ice_age = Song('Ice Age', SongTypes.instcover)
 
     # Full Albums
     al_phm = Song('Full PHM Album', SongTypes.al_phm, album_songs=[
@@ -346,6 +349,10 @@ played = set([
         Songs.not_witt,
         Songs.drowning,
         Songs.welcomeoblivion,
+        Songs.jlyi,
+        Songs.wing,
+        Songs.twilight,
+        Songs.ice_age,
         ])
 
 # Calculate scores and report.  Due to some internal Python behavior,

@@ -55,15 +55,15 @@ Fun, possibly?  I think so.
 
 [size=+1][b]Current Scores[/b][/size]
 
-The tour is not yet over, so these will (hopefully) change at least once or twice as the band pulls out some new shit for us.  If you know Python, feel free to check my scoring logic at [url]https://github.com/apocalyptech/ets-cbi-predictions/blob/master/scores.py[/url]
+The tour is nearly over - let's hope for at least one correct guess for the Dec 15 show!  If you know Python, feel free to check my scoring logic at [url]https://github.com/apocalyptech/ets-cbi-predictions/blob/master/scores.py[/url]
 
 [indent]
-[i](Last updated after the Dec 12 show.)[/i]
+[i](Last updated after the Dec 14 show.)[/i]
 
 {{scores}}
 [/indent]
 
-Dryalex12 and theimage13 (and technically elevenism) are benefitting from my allowing their cheeky "a song will be played" predictions.  Esperanzan is also benefitting from the "Not WITT" guess.  Oddly, nobody thought to guess some extra HTDA covers, which seems obvious in hindsight.  Total debuts so far: 2.  Total correct guesses: 0.
+Dryalex12 and theimage13 (and technically elevenism) are benefitting from my allowing their cheeky "a song will be played" predictions.  Esperanzan is also benefitting from the "Not WITT" guess.  Oddly, nobody thought to guess some extra HTDA covers, which seems obvious in hindsight.  Total debuts so far: 6.  Total correct guesses: 0.
 
 paul_guyet is being a little unfairly scored at the moment, since I realize that the predictions I put down in there include both "All of TDS", plus a few TDS tracks.  I'll have to figure out what to do about that in a bit, but that score should be a bit higher than it is.
 
@@ -87,7 +87,7 @@ A bit silly to have a scoring system where probably practically [i]everyone[/i] 
 [b]Dec 8 - Los Angeles, CA:[/b] -
 [b]Dec 11 - Los Angeles, CA:[/b] -
 [b]Dec 12 - Los Angeles, CA:[/b] -
-[b]Dec 14 - Los Angeles, CA:[/b] [i](n/a)[/i]
+[b]Dec 14 - Los Angeles, CA:[/b] Just Like You Imagined, In This Twilight, On the Wing, Ice Age [i](last two HTDA covers)[/i]
 [b]Dec 15 - Los Angeles, CA:[/b] [i](n/a)[/i]
 [/indent]
 
@@ -147,6 +147,7 @@ The Frail
 The Wretched
 Even Deeper
 La Mer
+Just Like You Imagined
 Starfuckers, Inc.
 The Big Come Down
 
@@ -171,6 +172,7 @@ Survivalism
 The Good Soldier
 Me, I'm Not
 The Great Destroyer
+In This Twilight
 [/indent]
 
 [b]The Slip:[/b]
@@ -234,4 +236,6 @@ Metal
 A Drowning
 Parasite
 Welcome Oblivion
+On the Wing
+Ice Age
 [/indent]

@@ -47,6 +47,7 @@ The Fragile:
         The Wretched
         Even Deeper
         La Mer
+        Just Like You Imagined
 
     right:
         Starfuckers, Inc.
@@ -70,6 +71,7 @@ Year Zero:
     The Good Soldier
     Me, I'm Not
     The Great Destroyer
+    In This Twilight
 
 The Slip:
 
@@ -121,3 +123,5 @@ Covers:
         A Drowning
         Parasite
         Welcome Oblivion
+        On the Wing
+        Ice Age
