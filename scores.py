@@ -123,6 +123,7 @@ class Songs(object):
     welcomeoblivion = Song('Welcome Oblivion', SongTypes.instcover)
     wing = Song('On the Wing', SongTypes.instcover)
     ice_age = Song('Ice Age', SongTypes.instcover)
+    bbb = Song('BBB', SongTypes.instcover)
 
     # Full Albums
     al_phm = Song('Full PHM Album', SongTypes.al_phm, album_songs=[
@@ -362,6 +363,7 @@ played = set([
         Songs.wing,
         Songs.twilight,
         Songs.ice_age,
+        Songs.bbb,
         ])
 
 # Calculate scores and report.  Due to some internal Python behavior,

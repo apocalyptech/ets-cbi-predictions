@@ -19,3 +19,6 @@ an awful lot of overkill.  :)
 The script is written in Python, and only tested on Python 3.  (The
 `gen_post.py` script definitely requires at least Python 3.7, though
 `scores.py` may work fine in Python 2.)
+
+Note that the tour is now over, and no updates to this repo are
+expected (not that anyone but me would care).

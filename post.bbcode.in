@@ -1,3 +1,33 @@
+[size=+1][b]Conclusion[/b][/size]
+
+NIN's [i]Cold and Black and Infinite[/i] 2018 tour has now officially wrapped up, and we have learned at least one thing: we are [i]terrible[/i] at predicting NIN setlists.  Total new song debuts: [b]7/b].  Total correct guesses: [b]0[/b].  To be fair, the only debuted songs in the second half of the tour were either HTDA "covers" (is it really a cover if every bandmember apart from Rob Sheridan was onstage?), or due to Mike Garson being around, but still: [i]one[/i] of us really should've put our virtual money on some HTDA appearances.  I mean, come on, folks.
+
+Anyway, since there were no actual "real" points given to anyone over this whole thing, we must be a little fuzzier with our placements:
+[list]
+[*] If we take into account the cheeky "a song will be played" style votes which I'd given 2 points to, [b]Dryalex12[/b] technically wins the contest, by virtue of low voting standards.  Well done!
+[*] If we ignore those, [b]loopcloses[/b] is the more "proper" winner, being the first person to bet so conservatively (only a single track), and so was punished less for the wrong prediction than nearly everyone else.
+[*] [b]Esperanzan[/b] gets an honorable mention, since I allowed the vote "NOT We're In This Together" to provide some points.  Apart from the shenanigans mentioned above, these were the only positive points on the board!  Though it was quite offset by the rest of Esperanzan's enthusiastic voting.
+[*] A further honorable mention goes to [b]K-Rice[/b], for being bold enough to put in a vote for "all of The Fragile", which put the initial score way down to the very bottom, where it remained for the remainder of the game.  Shoot for the stars!
+[/list]
+
+That's about it, really!  I still think that this idea could be expanded into a more general "setlist prediction" game, which could be used on future tours, but I suspect that would be a hell of a lot of work for not much gain.  Time will tell!
+
+Thanks for engaging in this bit of silliness with me -- this was a truly stellar tour, and it was awesome watching it unfold.
+
+[size=+1][b]Final Scores[/b][/size]
+
+If you know Python, feel free to check my scoring logic at [url]https://github.com/apocalyptech/ets-cbi-predictions/blob/master/scores.py[/url], not that it really matters.  :)
+
+[indent]
+{{scores}}
+[/indent]
+
+paul_guyet is being a little unfairly scored at the moment, since I realize that the predictions I put down in there include both "All of TDS", plus a few TDS tracks, but in the end it didn't turn out to be important enough to look into much.  Sorry, paul_guyet, if your placement should be a bit higher than it is.
+
+A bit silly to have a scoring system where literally [i]everyone[/i] is in negative points forever, isn't it?  Ah well.
+
+[size=+1][b]Original Intro[/b][/size]
+
 So we're a bit over halfway through Cold and Black and Infinite, and we've got this little reprieve before the gang gets back on the road.  I don't think [i]anyone[/i] could've predicted the kinds of insane setlists we've been getting this time around, and at this point it sort of feels like practically anything's possible.
 
 So, how about we place some bets about what new songs might get debuted in the remainder of the tour?  Not, like, with money or anything, but here's the general gist of what I was thinking:
@@ -53,22 +83,6 @@ Winner gets the warm glow of contentment and pleasure that comes from having bea
 
 Fun, possibly?  I think so.
 
-[size=+1][b]Current Scores[/b][/size]
-
-The tour is nearly over - let's hope for at least one correct guess for the Dec 15 show!  If you know Python, feel free to check my scoring logic at [url]https://github.com/apocalyptech/ets-cbi-predictions/blob/master/scores.py[/url]
-
-[indent]
-[i](Last updated after the Dec 14 show.)[/i]
-
-{{scores}}
-[/indent]
-
-Dryalex12 and theimage13 (and technically elevenism) are benefitting from my allowing their cheeky "a song will be played" predictions.  Esperanzan is also benefitting from the "Not WITT" guess.  Oddly, nobody thought to guess some extra HTDA covers, which seems obvious in hindsight.  Total debuts so far: 6.  Total correct guesses: 0.
-
-paul_guyet is being a little unfairly scored at the moment, since I realize that the predictions I put down in there include both "All of TDS", plus a few TDS tracks.  I'll have to figure out what to do about that in a bit, but that score should be a bit higher than it is.
-
-A bit silly to have a scoring system where probably practically [i]everyone[/i] is gonna be in negative points forever, isn't it?  Ah well.
-
 [size=+1][b]Tour Updates[/b][/size]
 
 [indent]
@@ -88,7 +102,7 @@ A bit silly to have a scoring system where probably practically [i]everyone[/i] 
 [b]Dec 11 - Los Angeles, CA:[/b] -
 [b]Dec 12 - Los Angeles, CA:[/b] -
 [b]Dec 14 - Los Angeles, CA:[/b] Just Like You Imagined, In This Twilight, On the Wing, Ice Age [i](last two HTDA covers)[/i]
-[b]Dec 15 - Los Angeles, CA:[/b] [i](n/a)[/i]
+[b]Dec 15 - Los Angeles, CA:[/b] BBB [i](HTDA cover)[i]
 [/indent]
 
 [size=+1][b]Played So Far[/b][/size]
@@ -238,4 +252,5 @@ Parasite
 Welcome Oblivion
 On the Wing
 Ice Age
+BBB
 [/indent]
